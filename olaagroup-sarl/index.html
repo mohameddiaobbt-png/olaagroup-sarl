@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OLAA GROUP SARL — BTP, Architecture & Télécoms | Sénégal</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+    :root {
+      --bg-dark: #0a0a0a;
+      --bg-card: #151515;
+      --gold: #c5a059;
+      --white: #ffffff;
+      --text-muted: #a0a0a0;
+      --whatsapp-green: #25D366;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; background-color: var(--bg-dark); color: var(--white); line-height: 1.6; scroll-behavior: smooth; }
+
+    /* --- NAVIGATION --- */
+    #navbar {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 15px 50px; background: rgba(10, 10, 10, 0.98);
+      position: fixed; top: 0; width: 100%; z-index: 1000; border-bottom: 1px solid #222;
+    }
+    .nav-logo { display: flex; align-items: center; font-size: 20px; font-weight: 700; text-decoration: none; color: var(--white); }
+    .nav-logo img { height: 45px; margin-right: 12px; border-radius: 4px; }
+    .nav-logo span { color: var(--gold); }
+    .nav-links a { text-decoration: none; color: var(--text-muted); margin-left: 20px; transition: 0.3s; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; }
+    .nav-links a:hover { color: var(--gold); }
+
+    /* --- HERO --- */
+    #hero {
+      height: 100vh; display: flex; align-items: center; justify-content: center;
+      position: relative; text-align: center;
+    }
+    .hero-bg {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      background-image: url('images/Villa/hero.jpeg');
+      background-size: cover; background-position: center; filter: brightness(0.3); z-index: 1;
+    }
+    .hero-content { position: relative; z-index: 2; max-width: 1000px; padding: 0 20px; }
+    h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 7vw, 4.5rem); margin-bottom: 20px; }
+    h1 span { color: var(--gold); font-style: italic; }
+
+    /* --- SECTIONS --- */
+    section { padding: 80px 8%; }
+    .section-header { text-align: center; margin-bottom: 60px; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: 2.8rem; margin-bottom: 15px; }
+    .section-title span { color: var(--gold); }
+    .tagline { color: var(--gold); text-transform: uppercase; letter-spacing: 3px; font-size: 13px; font-weight: 600; display: block; margin-bottom: 10px; }
+
+    /* --- GRILLES GALERIE --- */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+    .card { background: var(--bg-card); border-radius: 8px; overflow: hidden; border: 1px solid #222; transition: 0.4s; }
+    .card img { width: 100%; height: 280px; object-fit: cover; transition: 0.5s; display: block; }
+    .card:hover img { transform: scale(1.05); }
+
+    /* --- FOOTER --- */
+    footer { padding: 80px 8% 40px; background: #050505; border-top: 1px solid #111; }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px; }
+    .footer-col h4 { color: var(--gold); margin-bottom: 25px; font-family: 'Playfair Display', serif; font-size: 1.5rem; }
+    .social-links { display: flex; gap: 20px; margin-top: 20px; }
+    .social-links a { color: var(--white); font-size: 24px; transition: 0.3s; }
+    .social-links a:hover { color: var(--gold); transform: translateY(-3px); }
+    .contact-link { color: var(--white); text-decoration: none; display: block; margin-bottom: 10px; font-weight: 600; }
+
+    /* --- WHATSAPP --- */
+    .whatsapp-float {
+      position: fixed; width: 60px; height: 60px; bottom: 25px; right: 25px;
+      background-color: var(--whatsapp-green); color: #FFF; border-radius: 50px;
+      text-align: center; font-size: 30px; box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+      z-index: 1001; display: flex; align-items: center; justify-content: center;
+      text-decoration: none; animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+      70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+
+    @media (max-width: 768px) { .nav-links { display: none; } #navbar { padding: 15px 20px; } }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="#" class="nav-logo">
+      <img src="images/Logo/logo.jpg" alt="Logo OLAA GROUP">
+      OLAA<span>GROUP</span>
+    </a>
+    <div class="nav-links">
+      <a href="#villas">Villas</a>
+      <a href="#projects">Engins</a>
+      <a href="#gardens">Espaces Verts</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <span class="tagline">Ingénierie & Construction Haut de Gamme</span>
+      <h1>De la conception à la <span>livraison clé en main.</span></h1>
+    </div>
+  </section>
+
+  <section id="villas">
+    <div class="section-header">
+      <span class="tagline">Architecture & Design</span>
+      <h2 class="section-title">Réalisations <span>Villas</span></h2>
+    </div>
+    <div class="grid">
+      <div class="card"><img src="images/Villa/plan1.jpg" alt="Plan Villa 1"></div>
+      <div class="card"><img src="images/Villa/plan2.jpg" alt="Plan Villa 2"></div>
+      <div class="card"><img src="images/Villa/plan3.jpeg" alt="Plan Villa 3"></div>
+      <div class="card"><img src="images/Villa/plan4.jpeg" alt="Plan Villa 4"></div>
+      <div class="card"><img src="images/Villa/plan5.jpeg" alt="Plan Villa 5"></div>
+      <div class="card"><img src="images/Villa/plan6.jpeg" alt="Plan Villa 6"></div>
+    </div>
+  </section>
+
+  <section id="projects" style="background: #0d0d0d;">
+    <div class="section-header">
+      <span class="tagline">Capacité Technique</span>
+      <h2 class="section-title">Parc <span>Engins</span></h2>
+    </div>
+    <div class="grid">
+      <div class="card"><img src="images/Engins/Engin1.jpeg" alt="Engin 1"></div>
+      <div class="card"><img src="images/Engins/Engin2.jpeg" alt="Engin 2"></div>
+      <div class="card"><img src="images/Engins/Engin3.jpeg" alt="Engin 3"></div>
+    </div>
+  </section>
+
+  <section id="gardens">
+    <div class="section-header">
+      <span class="tagline">Aménagements</span>
+      <h2 class="section-title">Espaces <span>Verts</span></h2>
+    </div>
+    <div class="grid">
+      <div class="card"><img src="images/Espace_vert/jardin1.jpeg" alt="Jardin 1"></div>
+      <div class="card"><img src="images/Espace_vert/jardin2.jpeg" alt="Jardin 2"></div>
+      <div class="card"><img src="images/Espace_vert/jardin3.jpeg" alt="Jardin 3"></div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>OLAA GROUP SARL</h4>
+        <p>Guédiawaye, Darou Salam, Dakar</p>
+        <div class="social-links">
+          <a href="https://www.instagram.com/mohameddiaw.bbt" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=100088450280610" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://vm.tiktok.com/ZS98WrYEnDSau-PhLiC/" target="_blank"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:+221778363552" class="contact-link">📞 +221 77 836 35 52</a>
+        <a href="tel:+221764393481" class="contact-link">📞 +221 76 439 34 81</a>
+        <p>Email : contact@olaagroup.sn</p>
+      </div>
+      <div class="footer-col">
+        <h4>Informations</h4>
+        <p>NINEA : 011430353</p>
+        <p>RCCM : SN.DKR.2024.B.32248</p>
+      </div>
+    </div>
+    <div class="legal-bar">
+      <p>© 2026 OLAA GROUP SARL. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/221764393481" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+</body>
+</html>
